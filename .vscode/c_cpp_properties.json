@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "msp430",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/ti/msp430-gcc/include"
+            ],
+            "defines": [
+                "__MSP430F5529__",
+                "__GNUC__",
+                "__MSP430__"
+            ],
+            "compilerPath": "/opt/ti/msp430-gcc/bin/msp430-elf-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

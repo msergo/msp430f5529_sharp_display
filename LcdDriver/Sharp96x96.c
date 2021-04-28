@@ -43,12 +43,30 @@
 #include "grlib.h"
 #include "Sharp96x96utils.h"
 #include "Sharp96x96.h"
-#include "../driverlib/MSP430F5xx_6xx/driverlib.h"
+#include "driverlib.h"
 #include "inc/hw_memmap.h"
 
 unsigned char DisplayBuffer[LCD_VERTICAL_MAX][LCD_HORIZONTAL_MAX/8];
 unsigned char VCOMbit= 0x40;
 unsigned char flagSendToggleVCOMCommand = 0;
+
+
+//*******************************************************************************
+//
+//! Reverses the bit order.- Since the bit reversal function is called
+//! frequently by the several driver function this function is implemented
+//! to maximize code execution
+//
+//*******************************************************************************
+const uint8_t referse_data[] = {0x0, 0x8, 0x4, 0xC, 0x2, 0xA, 0x6, 0xE, 0x1, 0x9, 0x5, 0xD, 0x3, 0xB, 0x7, 0xF};
+uint8_t reverse(uint8_t x)
+{
+  uint8_t b = 0;
+
+  b  = referse_data[x & 0xF]<<4;
+  b |= referse_data[(x & 0xF0)>>4];
+  return b;
+}
 
 
 //*****************************************************************************

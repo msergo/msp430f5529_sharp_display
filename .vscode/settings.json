@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "driverlib.h": "c",
+        "grlib.h": "c"
+    }
+}

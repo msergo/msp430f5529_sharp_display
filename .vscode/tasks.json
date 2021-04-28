@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "type": "shell",
+    "tasks": [
+        {
+            "label": "run-debug-server",
+            "isBackground": true,
+            "command": "mspdebug tilib \"prog sharp_display.out\" && /opt/ti/msp430-gcc/bin/gdb_agent_console ./sharp_display.out",
+        },
+        {
+            "label": "start-mspdebug",
+            "isBackground": true,
+            "command": "mspdebug tilib \"prog sharp_display.out\" && mspdebug tilib \"gdb\"",
+        },
+    ]
+}

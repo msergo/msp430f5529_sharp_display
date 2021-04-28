@@ -36,7 +36,7 @@
 
 #include "grlib.h"
 #include "LcdDriver/Sharp96x96.h"
-#include "images/images.h"
+#include "images.h"
 #include "driverlib.h"
 
 
